@@ -1,0 +1,90 @@
+/* Por mabelolivera @encodedmabel */
+
+body {
+	--primary: #f22222; 
+	--secondary: #DAE2ED;
+	--base: #fff;
+	--bg: #fafafa;
+	--checked-bg: #28a745; 
+	--scale: 1.5; 
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+	font-size: calc(12px * var(--scale)); 
+	color: var(--primary);  
+	background: var(--bg);
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+		-ms-user-select: none;
+			user-select: none;
+  }
+  
+  span {
+	display: inline-block;
+	margin: 0 calc(8px * var(--scale));
+	font-size: calc(3rem * var(--scale)); 
+  }
+  
+  input {display: none;}
+  
+  label {
+	--w: calc(90px * var(--scale)); 
+	--p: calc(2px * var(--scale));  
+	--ease: cubic-bezier(0.165, 0.84, 0.44, 1);
+	position: relative;
+	padding: var(--p);
+	width: var(--w);
+	border: calc(2px * var(--scale)) solid var(--secondary);
+	border-radius: var(--w);
+	cursor: pointer;
+	background: var(--base);
+  }
+  
+  label:before, label:after {
+	position: absolute;
+	width: 50%;
+	top: 50%; 
+	transform: translateY(-50%); 
+	display: inline-block;
+	text-align: center;
+	font-size: calc(2em * var(--scale)); 
+	color: var(--secondary);
+	transition: color 0.6s var(--ease);
+	z-index: 10;
+  }
+  
+  label:before {
+	content: 'I';
+	left: 0;
+  }
+  
+  label:after {
+	content: 'O';
+	left: 50%;
+  }
+  
+  label i {
+	--d: calc((var(--w) / 2) - (var(--p) / 2)); 
+	position: relative;
+	display: block;
+	height: var(--d);
+	width: var(--d);
+	border: calc(1px * var(--scale)) solid rgba(0, 0, 0, 0.1);
+	border-radius: 100%;
+	background: var(--primary);
+	transition: transform 0.6s var(--ease), background 0.6s var(--ease);
+  }
+  
+  input[type="checkbox"]:checked + label i {
+	transform: translateX(var(--d));
+	background: var(--checked-bg); 
+  }
+  
+  img {
+	height: calc(50px * var(--scale));
+	margin-left: calc(10px * var(--scale));
+  }
+  
